@@ -14,16 +14,16 @@ html {
   body {
     display: flex;
     justify-content: center;
-    background-color: gray;
+    background-color: #242424;
     font-family: 'Roboto',sans-serif;
   }
 
   main {
     display: grid;
-    grid-template-rows: 3% 15% 3% 30% 6% 7% 1fr 6% 7% 5% 1fr 5% 1fr;
+    grid-template-rows: 3% 15% 3% 28% 6% 42% 3%;
     grid-template-columns: 10px 1fr 10px;
     border-radius: 5px;
-    background-color: #3cc38d;
+    background-color: #02efee;
     width: 300px;
     height: 425px;
   }
@@ -39,7 +39,7 @@ html {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    background-color: #088c57;
+    background-color: #01017c;
     color: white;
     font-size: 25px; 
   }
@@ -68,6 +68,9 @@ html {
     grid-row-end: 3;
     justify-self: stretch;
     align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 15px;
     background-color:#ceb1b1;
   }
@@ -79,6 +82,9 @@ html {
     grid-row-end: 3;
     justify-self: stretch;
     align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 15px;
     background-color:#ceb1b1;
   }
@@ -90,32 +96,150 @@ html {
     grid-row-end: 3;
     justify-self: stretch;
     align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 15px;
     background-color:#ceb1b1;
   }
 
   section#bottom {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    display: grid;
+    grid-template-rows: 25% 4% 15% 22% 15% 4% 15%;
+    grid-template-columns: 1fr 3% 1fr 3% 1fr;
   }
 
   div#slotMsg {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-self: stretch;
+    align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: #01017c;
+    color: white;
+  }
 
+  div#text1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    justify-self: stretch;
+    align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 0 0;
+    font-size: 15px;
+  }
+
+  div#crWon {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    justify-self: stretch;
+    align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 8px 0 0;
+    border-radius: 15px;
+    background-color: #000000;
+    color: #eb0909;
+    font-size: 24px;
+  }
+
+  div#text2 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    justify-self: stretch;
+    align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 0 0;
+    font-size: 15px;
+  }
+
+  div#text3 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    justify-self: stretch;
+    align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 5px 0;
+    font-size: 10px;
+  }
+
+  div#crLeft {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    justify-self: stretch;
+    align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 8px 0 0;
+    border-radius: 15px;
+    background-color: #000000;
+    color: #eb0909;
+    font-size: 24px;
   }
 
   div#spin {
-    margin-top: 25px;
-    padding: 25px 0 25px 0;
-    border-radius: 5px;
-    text-align: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    justify-self: stretch;
+    align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     background-color: #088c57;
     color: white;
     font-size: 20px;
-    max-width: 100px;
-    max-height: 50px; 
+  }
+
+  div#spin:hover {
+    background-color: red;
   }
 
   div#reset {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    justify-self: stretch;
+    align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #088c57;
+    color: white;
+    font-size: 18px;
+  }
 
+  div#reset:hover {
+    background-color: red;
   }
