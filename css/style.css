@@ -12,168 +12,110 @@ html {
   }
   
   body {
-    display: grid;
-    background-color: gray;
-    font-family: sans-serif;
-  }
-
-  main {
-    display: grid;
-    min-width: 300px;
-    min-height: 425px;
-    margin: auto 0;
-    border: 3px solid white;
-    grid-template-columns: 4.75% 27% 4.75% 27% 4.75% 27% 4.75%;
-    grid-template-rows: 6% 7% 6% 20% 6% 6% 7% 6% 6% 7% 5% 6% 5% 7%;
-    grid-template-areas:
-    'slotM slotM slotM slotM slotM slotM slotM'
-    'slotM slotTitle slotTitle slotTitle slotTitle slotTitle slotM'
-    'slotM slotM slotM slotM slotM slotM slotM'
-    'slotM reel1 slotM reel2 slotM reel3 slotM'
-    'slotM slotM slotM slotM slotM slotM slotM'
-    'slotM slotM slotM slotM slotM slotM slotM'
-    'slotM slotMsg slotMsg slotMsg slotMsg slotMsg slotM'
-    'slotM slotM slotM slotM slotM slotM slotM'
-    'slotM text1 slotM slotM slotM text2 slotM'
-    'slotM crWon slotM spinBtn slotM crPlayer slotM'
-    'slotM slotM slotM slotM slotM slotM slotM'
-    'slotM slotM slotM resetBtn slotM slotM slotM'
-    'slotM slotM slotM slotM slotM slotM slotM';
-    }
-
-
-    div#slotM {
-        display: grid;
-        grid-area: 'slotM';
-        background-color: limegreen;
-        font-size: 10px;
-    }
-
-    div#slotTitle {
-        display: grid;
-        grid-area: 'slotTitle';
-        align-self: stretch;
-        justify-self: stretch;
-        align-items: stretch;
-        background-color: red;
-    }
-
-    div#reel1 {
-        display: grid;
-        grid-area: 'reel 1'; 
-    }
-
-    div#reel2 {
-        display: grid
-        grid-area: 'reel 2';
-    }
-
-    div#reel3 {
-        display: grid;
-        grid-area: 'reel 3';
-    }
-
-    div#slotMsg {
-        display: grid;
-        grid-area: 'slotMsg';
-    }
-
-    div#text1 {
-        display: grid;
-        grid-area: 'text1';
-    }
-
-    div#text2 {
-        display: grid;
-        grid-area: 'text2';
-    }
-
-    div#crWon {
-        display: grid;
-        grid-area: 'crWon';
-    }
-
-    button#spin {
-        display: grid;
-        grid-area: 'spin';
-    }
-
-    div#playCr {
-        display: grid;
-        grid-area: 'playCr';
-    }
-
-    div#text3 {
-        display: grid;
-        grid-area: 'reel 3';
-    }
-
-    button#reset {
-        display: grid;
-        grid-area: 'reset';
-    }
-
-
-
-  @media only screen and (min-width: 600px) {
-    main {
-      display: grid;
-      text-align: left;
-      width: 580px;
-      height: 300px;
-      grid-template-columns: 1fr 150px 1fr 150px 1fr 150px 1fr;
-      grid-template-rows: 25% 25% 25% 25%;
-      grid-template-areas:
-      'img img name name name'
-      'img img job job job'
-      'img img about about about'
-      'contact contact about about about';
-    }
-  /* nav {
-    align-items: center;
     display: flex;
-    height: 60px;
-    background-color: #1A5D04;
-    flex-direction: row; /*row is the default setting - so this code isn't actually needed.*/
-    /* justify-content: flex-start;
-    grid-area: nav;
-  } */
-
-  /* aside {
-    background-color: #38b18a;
-    grid-area: aside;
+    justify-content: center;
+    background-color: gray;
+    font-family: 'Roboto',sans-serif;
   }
-  
+
   main {
-    background-color: #92d97c;
-    grid-area: main;
     display: grid;
-  }
-  
-  footer {
-    background-color: #f9f871;
-    height: 40px;
-    grid-area: footer;
+    grid-template-rows: 3% 15% 3% 30% 6% 7% 1fr 6% 7% 5% 1fr 5% 1fr;
+    grid-template-columns: 10px 1fr 10px;
+    border-radius: 5px;
+    background-color: #3cc38d;
+    width: 300px;
+    height: 425px;
   }
 
-  nav > div {
+  section#slotTitle {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: stretch;
+    align-self: stretch;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #088c57;
+    color: white;
+    font-size: 25px; 
+  }
+
+  section#reels {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    align-self:stretch;
+    justify-self: stretch;
+    display: grid;
+    grid-template-rows: 18.5px 1fr 18.5px;
+    grid-template-columns: 5px 1fr 10px 1fr 10px 1fr 5px;
+    border-radius: 15px;
+    background-color:#4b4b4b;
+    width: 280px;
+    height: 120px;
+
+  }
+
+  div#reel1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: stretch;
+    align-self: stretch;
+    border-radius: 15px;
+    background-color:#ceb1b1;
+  }
+
+  div#reel2 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: stretch;
+    align-self: stretch;
+    border-radius: 15px;
+    background-color:#ceb1b1;
+  }
+
+  div#reel3 {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: stretch;
+    align-self: stretch;
+    border-radius: 15px;
+    background-color:#ceb1b1;
+  }
+
+  section#bottom {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  div#slotMsg {
+
+  }
+
+  div#spin {
+    margin-top: 25px;
+    padding: 25px 0 25px 0;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #088c57;
+    color: white;
     font-size: 20px;
-    font-weight: bold;
-    margin: 10px;
-    color: #E1F8D4;
+    max-width: 100px;
+    max-height: 50px; 
   }
 
-  nav > div:last-of-type {
-    margin-left: auto;
-  }
+  div#reset {
 
-  nav > img {
-      border-radius: 7px;
-      margin: 0 10px;
   }
-
-  .flex-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-  } */
