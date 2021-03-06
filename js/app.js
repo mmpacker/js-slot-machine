@@ -10,11 +10,13 @@
 //     'img5': '7️⃣',
 // }
 
-const img1 = '➖'
-const img2 = '🍒'
-const img3 = '🔔'
-const img4 = '💎'
-const img5 = '7️⃣'
+const img1 = 'images/eTankGif_resize.gif';
+const img2 = 'images/metGif2_resize.gif';
+const img3 = 'images/rushCoilGif_resize.gif';
+const img4 = 'images/wileyGif_resize.gif';
+const img5 = 'images/mmGif_resize.gif';
+const imageDefault1 = 'images/mm1Up_resize.gif';
+const imageDefault2 = 'images/mmTitle_resize.gif';
 
 
 // VARIABLES (state)
@@ -29,9 +31,12 @@ let randNum2 = null;
 let randNum3 = null;
 
 // CACHED ELEMENT REFERENCES
-const reel1El = document.getElementById('reel1');
-const reel2El = document.getElementById('reel2');
-const reel3El = document.getElementById('reel3');
+// const reel1El = document.getElementById('reel1');
+// const reel2El = document.getElementById('reel2');
+// const reel3El = document.getElementById('reel3');
+const slotEl1 = document.getElementById('el1');
+const slotEl2 = document.getElementById('el2');
+const slotEl3 = document.getElementById('el3');
 
 let winCrEl = document.getElementById('crWon')
 let crLeftEl = document.getElementById('crLeft')
@@ -52,9 +57,12 @@ function init(){
     isWinner = null;
     playerCredits = 100;
     winCredits = 0;
-    messageEl.innerText = `Press SPIN to Play!`
-    crLeftEl.innerText = playerCredits
-    winCredits.innerText = winCredits
+    messageEl.innerText = `Press SPIN to Play!`;
+    crLeftEl.innerText = playerCredits;
+    winCredits.innerText = winCredits;
+    slotEl1.src = imageDefault1;
+    slotEl2.src = imageDefault1;
+    slotEl3.src = imageDefault1;
     randNum1 = null;
     randNum2 = null;
     randNum3 = null;
@@ -147,13 +155,13 @@ function ckWinner(){
 // Render
 function render(){
     re1 = spinReel1();
-    reel1El.innerText = re1;
+    slotEl1.src = re1
 
     re2 = spinReel2();
-    reel2El.innerText = re2;
+    slotEl2.src = re2
 
     re3 = spinReel3();
-    reel3El.innerText = re3;
+    slotEl3.src = re3
     
     ckWinner();
     
