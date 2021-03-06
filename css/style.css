@@ -75,6 +75,7 @@ html {
     justify-content: center;
     border-radius: 15px;
     background-color: #f4ecec;
+    font-size: 50px;
   }
 
   div#reel1 > img {
@@ -94,6 +95,7 @@ html {
     justify-content: center;
     border-radius: 15px;
     background-color: #f4ecec;
+    font-size: 50px;
   }
 
   div#reel2 > img {
@@ -113,6 +115,7 @@ html {
     justify-content: center;
     border-radius: 15px;
     background-color: #f4ecec;
+    font-size: 50px;
   }
 
   div#reel3 > img {
