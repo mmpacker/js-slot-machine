@@ -1,4 +1,4 @@
-##### JS Slot Machine
+# JS Slot Machine
 ### by Matt Packer
 
 

@@ -86,66 +86,79 @@ function spinReels(){
 }
 
 // Spin Reels
+
 function spinReel1(){ 
-    let result1;
-    randNum1 = Math.floor(Math.random() * ((100-1)+1)) + 1;
-    if(randNum1 >= 1 && randNum1 <= 50){
-        result1 = img1
-    } else if(randNum1 >= 51 && randNum1 <= 65) {
-        result1 = img2
-    } else if(randNum1 >= 66 && randNum1 <= 80) {
-        result1 = img3
-    } else if (randNum1 >= 81 && randNum1 <= 90) {
-        result1 = img4
-    } else if (randNum1 >= 91 && randNum1 <= 100) {
-        result1 = img5
-    }
+    setTimeout( function() {
+        let result1;
+        randNum1 = Math.floor(Math.random() * ((100-1)+1)) + 1;
+        if(randNum1 >= 1 && randNum1 <= 50){
+            result1 = img1
+        } else if(randNum1 >= 51 && randNum1 <= 65) {
+            result1 = img2
+        } else if(randNum1 >= 66 && randNum1 <= 80) {
+            result1 = img3
+        } else if (randNum1 >= 81 && randNum1 <= 90) {
+            result1 = img4
+        } else if (randNum1 >= 91 && randNum1 <= 100) {
+            result1 = img5
+        }
+        return result1;
+    }, 2000);
     console.log(result1)
-    return result1;
 }
 
 function spinReel2(){ 
-    let result2;
-    randNum2 = Math.floor(Math.random() * ((100-1)+1)) + 1;
-    if(randNum2 >= 1 && randNum2 <= 75){
-        result2 = img1
-    } else if(randNum2 >= 76 && randNum2 <= 90) {
-        result2 = img2
-    } else if(randNum2 >= 91 && randNum2 <= 95) {
-        result2 = img3
-    } else if (randNum2 >= 96 && randNum2 <= 98) {
-        result2 = img4
-    } else if (randNum2 >= 99 && randNum2 <= 100) {
-        result2 = img5
-    }
+    setTimeout( function() {
+        let result2;
+        randNum2 = Math.floor(Math.random() * ((100-1)+1)) + 1;
+        if(randNum2 >= 1 && randNum2 <= 75){
+            result2 = img1
+        } else if(randNum2 >= 76 && randNum2 <= 90) {
+            result2 = img2
+        } else if(randNum2 >= 91 && randNum2 <= 95) {
+            result2 = img3
+        } else if (randNum2 >= 96 && randNum2 <= 98) {
+            result2 = img4
+        } else if (randNum2 >= 99 && randNum2 <= 100) {
+            result2 = img5
+        }
+        return result2;
+    }, 2000);
     console.log(result2)
-    return result2;
 }
 
 function spinReel3(){ 
-    let result3;
-    randNum3 = Math.floor(Math.random() * ((100-1)+1)) + 1;
-    if(randNum3 >= 1 && randNum3 <= 75){
-        result3 = img1
-    } else if(randNum3 >= 76 && randNum3 <= 90) {
-        result3 = img2
-    } else if(randNum3 >= 91 && randNum3 <= 95) {
-        result3 = img3
-    } else if (randNum3 >= 96 && randNum3 <= 98) {
-        result3 = img4
-    } else if (randNum3 >= 99 && randNum3 <= 100) {
-        result3 = img5
-    }
+    setInterval( function() {
+        let result3;
+        randNum3 = Math.floor(Math.random() * ((100-1)+1)) + 1;
+        if(randNum3 >= 1 && randNum3 <= 75){
+            result3 = img1
+        } else if(randNum3 >= 76 && randNum3 <= 90) {
+            result3 = img2
+        } else if(randNum3 >= 91 && randNum3 <= 95) {
+            result3 = img3
+        } else if (randNum3 >= 96 && randNum3 <= 98) {
+            result3 = img4
+        } else if (randNum3 >= 99 && randNum3 <= 100) {
+            result3 = img5
+        }
+        return result3;
+    }, 2000);
     console.log(result3)
-    return result3;
 }
 
 // Check Winner
 function ckWinner(){
     if(re1 === re2 && re2 === re3 && re3 === img5) {
         isWinner = 'J'
-    } else if (re1 === re2 && re2 === re3) {
-        isWinner = 'W'
+    } else if (re1 === re2 && re2 === re3 && re3 === img4) {
+        isWinner = 'W4'
+    } else if (re1 === re2 && re2 === re3 && re3 === img3) {
+        isWinner = 'W3'
+    } else if (re1 === re2 && re2 === re3 && re3 === img2) {
+        isWinner = 'W2'
+    } else if (re1 === re2 && re2 === re3 && re3 === img1) {
+        isWinner = 'W1'
     } else {
         isWinner = 'L'
     }
@@ -154,6 +167,10 @@ function ckWinner(){
 
 // Render
 function render(){
+    sr1 = setInterval(spinReel1, 1000)
+    sr2 = setInterval(spinReel2, 1000)
+    sr3 = setInterval(spinReel3, 1000)
+    
     re1 = spinReel1();
     slotEl1.src = re1
 
@@ -166,22 +183,46 @@ function render(){
     ckWinner();
     
     if(isWinner === 'J') {
-        messageEl.innerText = `JACKPOT!!! 🎉`
+        messageEl.innerText = `MEGA JACKPOT WINNER!!! 🎉 🤖 🎉`
         
         winCredits = 1000
         winCrEl.innerText = winCredits
 
         playerCredits = (playerCredits + winCredits)
         crLeftEl.innerText = playerCredits
-    } else if (isWinner === 'W') {
-        messageEl.innerText = `Winner!`
+    } else if (isWinner === 'W4') {
+        messageEl.innerText = `Wiley Winner! 💀`
+        
+        winCredits = 500
+        winCrEl.innerText = winCredits
+
+        playerCredits = (playerCredits + winCredits)
+        crLeftEl.innerText = playerCredits
+    } else if (isWinner === 'W3') {
+        messageEl.innerText = `Rush Winner! 🐕`
+         
+        winCredits = 250
+        winCrEl.innerText = winCredits
+
+        playerCredits = (playerCredits + winCredits)
+        crLeftEl.innerText = playerCredits
+    } else if (isWinner === 'W2') {
+        messageEl.innerText = `You Win! 💯`
         
         winCredits = 100
         winCrEl.innerText = winCredits
 
         playerCredits = (playerCredits + winCredits)
         crLeftEl.innerText = playerCredits
-    } else if (isWinner === 'L') {
+    } else if (isWinner === 'W1') {
+        messageEl.innerText = `Winner!`
+        
+        winCredits = 50
+        winCrEl.innerText = winCredits
+
+        playerCredits = (playerCredits + winCredits)
+        crLeftEl.innerText = playerCredits
+    } else {
         winCredits = 0
         winCrEl.innerText = winCredits
 
