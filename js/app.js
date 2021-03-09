@@ -17,6 +17,26 @@ const spinImg = 'images/mmSpin_resize.gif'
     //Audio
 const quarterDrop = new Audio('../audio/SFX_QuarterDrop.wav')
 
+const mm2theme = new Audio('../audio/megaMan2_theme_short.mp3')
+
+const pullLever = new Audio('../audio/slotPullLever.flac')
+
+const enemyChosen = new Audio('../audio/mm_EnemyChosen.mp3')
+
+const reelStop = new Audio('../audio/08-openMenu.wav')
+
+const jackpotSound = new Audio('../audio/mmVictory.mp3');
+
+const wilySound = new Audio('../audio/mm_DrWilysMap.mp3')
+
+const protoSound = new Audio('../audio/mm_EnemyChosen.mp3')
+
+const mm1upSound = new Audio('../audio/02-mm1up.wav')
+
+const gameOverSound = new Audio('../audio/05-mmDeath.wav')
+
+const selectSound = new Audio('../audio/09-selectMenu.wav')
+
 // VARIABLES (state)
 
 let reel1State = '';
@@ -74,7 +94,9 @@ function init(){
     randNum3 = null;
 
     quarterDrop.play();
-    setTimeout(quarterDrop.play, 3000)
+    setTimeout(function(){
+        mm2theme.play();
+    }, 2000)
 }
 
 
@@ -96,6 +118,11 @@ function spin(){
         slotEl1.src = reel1State;
         slotEl2.src = reel2State;
         slotEl3.src = reel3State;
+
+        pullLever.play();
+        setTimeout(function(){
+            enemyChosen.play();
+        },1000)
 
         spinReel1();
         spinReel2();
@@ -169,30 +196,35 @@ function ckWinner(){
     } else {
         isWinner = 'L'
     }
-    setTimeout(renderReel1, 1500);
+    setTimeout(renderReel1, 5000);
 }
 
 
 // Render
 function renderReel1(){
     slotEl1.src = reel1State
-    setTimeout(renderReel2, 1250)
+    reelStop.play();
+    setTimeout(renderReel2, 1500)
 }
 
 function renderReel2(){
     slotEl2.src = reel2State
-    setTimeout(renderReel3, 1250)
+    reelStop.play();
+    setTimeout(renderReel3, 1500)
 }
 
 function renderReel3(){
     slotEl3.src = reel3State
-    setTimeout(renderFinal, 250)
+    reelStop.play();
+    setTimeout(renderFinal, 500)
 }
 
 function renderFinal(){
     if(isWinner === 'J') {
         messageEl.innerText = `MEGA JACKPOT WINNER!!! 🤖`
         
+        jackpotSound.play();
+
         winCredits = 1000
         winCrEl.innerText = winCredits
 
@@ -201,6 +233,8 @@ function renderFinal(){
     } else if (isWinner === 'W4') {
         messageEl.innerText = `Triple Wily Winner! 💀`
         
+        wilySound.play();
+
         winCredits = 500
         winCrEl.innerText = winCredits
 
@@ -208,7 +242,9 @@ function renderFinal(){
         remainCrEl.innerText = remainCredits
     } else if (isWinner === 'W3') {
         messageEl.innerText = `Triple Proto Winner!`
-         
+        
+        protoSound.play();
+
         winCredits = 250
         winCrEl.innerText = winCredits
 
@@ -217,6 +253,8 @@ function renderFinal(){
     } else if (isWinner === 'W2') {
         messageEl.innerText = `You Win! 💯`
         
+        mm1upSound.play();
+
         winCredits = 100
         winCrEl.innerText = winCredits
 
@@ -225,6 +263,8 @@ function renderFinal(){
     } else if (isWinner === 'W1') {
         messageEl.innerText = `Winner!`
         
+        mm1upSound.play();
+
         winCredits = 50
         winCrEl.innerText = winCredits
 
@@ -238,8 +278,13 @@ function renderFinal(){
         remainCrEl.innerText = remainCredits
         if(remainCredits > 0) {
             messageEl.innerText = `Press SPIN to try again!`
+
+            selectSound.play();
+
         } else {
             messageEl.innerText = `Game Over! Press RESET to play again!`
+
+            gameOverSound.play();
         }
     }
 };
