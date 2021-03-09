@@ -83,7 +83,7 @@ function init(){
     slotEl3.src = reel3State;
     
     isWinner = null;
-    remainCredits = 100;
+    remainCredits = 10;
     winCredits = 0;
     messageEl.innerText = `Press SPIN to Play!`;
     remainCrEl.innerText = remainCredits;
@@ -282,7 +282,7 @@ function renderFinal(){
             selectSound.play();
 
         } else {
-            messageEl.innerText = `Game Over! Press RESET to play again!`
+            messageEl.innerText = `Game Over! Press RESET!`
 
             gameOverSound.play();
         }

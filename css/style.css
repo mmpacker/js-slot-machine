@@ -26,7 +26,20 @@ html {
     grid-template-columns: 10px 1fr 10px;
     margin: 25vh 0 0 0;
     border-radius: 5px;
-    background-color: #02efee;
+    border: 5px solid #040491;
+    background-color: #52f7f7;
+    background: linear-gradient(
+      180deg,
+      #0069ff,
+      #0075fe,
+      #007ffc,
+      #0089f9,
+      #0092f4,
+      #009bf1,
+      #00a3eb,
+      #00aae5,
+      #00b3dc,
+      #00b9c9);
     width: 300px;
     height: 425px;
   }
@@ -42,10 +55,11 @@ html {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    border: 3px solid white;
     background-color: #01017c;
     color: white;
-    font-family: 'DotGothic16', sans-serif;
-    font-size: 25px; 
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px; 
   }
 
   section#reels {
@@ -59,7 +73,19 @@ html {
     grid-template-rows: 18.5px 1fr 18.5px;
     grid-template-columns: 5px 1fr 10px 1fr 10px 1fr 5px;
     border-radius: 15px;
-    background-color:#4b4b4b;
+    border: 3px solid goldenrod;
+    background-color:#ffd700;
+    background: linear-gradient(
+      180deg,
+      #ffea00,
+      #ffdd00,
+      #ffd000,
+      #ffca4f,
+      #ffc300,
+      #ffca4f,
+      #ffd000
+      #ffdd00,
+      #ffea00);
     width: 100%;
     height: auto;
   }
@@ -75,8 +101,20 @@ html {
     align-items: center;
     justify-content: center;
     border-radius: 15px;
+    border: 2px solid blue;
     background-color: #c3c3c3;
-  }
+    background: linear-gradient(
+      180deg,
+      #00b9c9,
+      #00b3dc,
+      #00aae5,
+      #00a3eb,
+      #009bf1,
+      #00a3eb,
+      #00aae5,
+      #00b3dc,
+      #00b9c9);
+    }
 
   div#reel1 > img {
     max-width: 100%;
@@ -94,7 +132,19 @@ html {
     align-items: center;
     justify-content: center;
     border-radius: 15px;
+    border: 2px solid blue;
     background-color: #c3c3c3;
+    background: linear-gradient(
+      180deg,
+      #00b9c9,
+      #00b3dc,
+      #00aae5,
+      #00a3eb,
+      #009bf1,
+      #00a3eb,
+      #00aae5,
+      #00b3dc,
+      #00b9c9);
   }
 
   div#reel2 > img {
@@ -113,7 +163,19 @@ html {
     align-items: center;
     justify-content: center;
     border-radius: 15px;
+    border: 2px solid blue;
     background-color: #c3c3c3;
+    background: linear-gradient(
+      180deg,
+      #00b9c9,
+      #00b3dc,
+      #00aae5,
+      #00a3eb,
+      #009bf1,
+      #00a3eb,
+      #00aae5,
+      #00b3dc,
+      #00b9c9);
   }
 
   div#reel3 > img {
@@ -142,10 +204,11 @@ html {
     align-items: center;
     justify-content: center;
     border-radius: 12px;
+    border: 3px solid white;
     background-color: #01017c;
     color: white;
-    font-family: 'Press Start 2P', sans-serif;
-    font-size: 18px;
+    font-family: 'VT323', sans-serif;
+    font-size: 24px;
   }
 
   div#text1 {
@@ -174,6 +237,7 @@ html {
     justify-content: flex-end;
     padding: 0 8px 0 0;
     border-radius: 15px;
+    border: 2px solid white;
     background-color: #000000;
     color: #eb0909;
     font-family: 'DotGothic16', sans-serif;
@@ -220,6 +284,7 @@ html {
     justify-content: flex-end;
     padding: 0 8px 0 0;
     border-radius: 15px;
+    border: 2px solid white;
     background-color: #000000;
     color: #eb0909;
     font-family: 'DotGothic16', sans-serif;
@@ -243,7 +308,7 @@ html {
   }
 
   div#spinBtn:hover {
-    background-color: red;
+    background-color: #ffd700;
   }
 
   div#resetBtn {
@@ -263,7 +328,7 @@ html {
   }
 
   div#resetBtn:hover {
-    background-color: red;
+    background-color: #ffd700;
   }
 
   
@@ -279,11 +344,11 @@ html {
     }
   
     section#slotTitle {
-      font-size: 60px; 
+      font-size: 48px; 
     }
   
     div#slotMsg {
-      font-size: 18px;
+      font-size: 40px;
     }
   
     div#text1 {
@@ -316,7 +381,7 @@ html {
     }
   
     div#spinBtn:hover {
-      background-color: red;
+      background-color: #ffd700;
     }
   
     div#resetBtn {
@@ -324,6 +389,6 @@ html {
     }
   
     div#resetBtn:hover {
-      background-color: red;
+      background-color: #ffd700;
     }
   }
