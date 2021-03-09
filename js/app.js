@@ -2,6 +2,7 @@
 
 // CONSTANTS
 
+    //Images
 const eTankImg = 'images/eTankGif_resize.gif';  //E-Tank - 50
 const metImg = 'images/metGif2_resize.gif'; // Met - 100
 const protoImg = 'images/protoManGif_resize.gif'; // Proto Man - 250
@@ -13,6 +14,8 @@ const imageDefault2 = 'images/mmTitle_resize.gif';
 
 const spinImg = 'images/mmSpin_resize.gif'
 
+    //Audio
+const quarterDrop = new Audio('../audio/SFX_QuarterDrop.wav')
 
 // VARIABLES (state)
 
@@ -69,6 +72,9 @@ function init(){
     randNum1 = null;
     randNum2 = null;
     randNum3 = null;
+
+    quarterDrop.play();
+    setTimeout(quarterDrop.play, 3000)
 }
 
 
