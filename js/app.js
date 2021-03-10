@@ -7,7 +7,7 @@ const eTankImg = 'images/eTankGif_resize.gif';  //E-Tank - 50
 const metImg = 'images/metGif2_resize.gif'; // Met - 100
 const protoImg = 'images/protoManGif_resize.gif'; // Proto Man - 250
 const wilyImg = 'images/wilyGif_resize.gif'; // Dr. Wily - 500
-const mmImg = 'images/mmGif_resize.gif'; // Mega Man - 1000 (Jackpot)
+const mmImg = 'images/mmGif2_speed.gif'; // Mega Man - 1000 (Jackpot)
 
 const imageDefault1 = 'images/mm1Up_resize.gif';
 const imageDefault2 = 'images/mmTitle_resize.gif';
@@ -16,7 +16,7 @@ const spinImg = 'images/mmSpin_resize.gif'
 
     //Sounds
 let quarterDrop = new Audio('../audio/SFX_QuarterDrop.wav')
-// let mm2theme = new Audio('../audio/megaMan2_theme_short.mp3')
+let mm2theme = new Audio('../audio/megaMan2_theme_short.mp3')
 let pullLever = new Audio('../audio/slotPullLever.flac')
 let enemyChosen = new Audio('../audio/mm_EnemyChosen.mp3')
 let reelStop = new Audio('../audio/08-openMenu.wav')
@@ -27,8 +27,8 @@ let mm1upSound = new Audio('../audio/02-mm1up.wav')
 let gameOverSound = new Audio('../audio/05-mmDeath.wav')
 let selectSound = new Audio('../audio/09-selectMenu.wav')
 
-// const soundOn = '🔈'
-// const soundOff = '🔇'
+const soundOn = '🔈'
+const soundOff = '🔇'
 
 // VARIABLES (state)
 
@@ -45,7 +45,7 @@ let randNum1 = null;
 let randNum2 = null;
 let randNum3 = null;
 
-// let sound = true;
+let sound = '';
 
 // CACHED ELEMENT REFERENCES
 const reelsEl = document.getElementById('reels');    
@@ -54,20 +54,22 @@ const slotEl1 = document.getElementById('el1');
 const slotEl2 = document.getElementById('el2');
 const slotEl3 = document.getElementById('el3');
 
-const winCrEl = document.getElementById('crWon')
-const remainCrEl = document.getElementById('crRemain')
+const winCrEl = document.getElementById('crWon');
+const remainCrEl = document.getElementById('crRemain');
 const messageEl = document.getElementById('slotMsg');
 
-// const soundEl = document.getElementById('sound');
+let soundEl = document.getElementById('sound');
 
+const spinBtn = document.getElementById('spinBtn');
+const resetBtn = document.getElementById('resetBtn');
 
 // EVENT LISTENERS
 
-document.getElementById('spinBtn').addEventListener('click', spin)
+spinBtn.addEventListener('click', spin)
 
-document.getElementById('resetBtn').addEventListener('click', init)
+resetBtn.addEventListener('click', init)
 
-// document.getElementById('sound').addEventListener('click', soundToggle)
+soundEl.addEventListener('click', soundToggle)
 
 
 // FUNCTIONS
@@ -90,15 +92,16 @@ function init(){
     remainCrEl.innerText = remainCredits;
     winCrEl.innerText = winCredits;
     
+    sound = true;
+    soundEl.innerText = soundOn 
+
     randNum1 = null;
     randNum2 = null;
     randNum3 = null;
 
-    quarterDrop.play();
-
-    // setTimeout(function(){
-    //     mm2theme.play();
-    // }, 2000)
+    if(sound === true){
+        quarterDrop.play();
+    }
 }
 
 
@@ -109,7 +112,9 @@ function spin(){
     if (remainCredits <= 0) {
         messageEl.innerText = `Game Over! Press RESET!`
 
-        gameOverSound.play();
+        if(sound === true){
+            gameOverSound.play();
+        }
 
     } else {
         remainCredits = (remainCredits - 1);
@@ -126,10 +131,12 @@ function spin(){
         slotEl2.src = reel2State;
         slotEl3.src = reel3State;
 
-        pullLever.play();
-        setTimeout(function(){
-            enemyChosen.play();
-        },1000)
+        if(sound === true){
+            pullLever.play();
+            setTimeout(function(){
+                enemyChosen.play();
+            },1000)
+        }
 
         spinReel1();
         spinReel2();
@@ -210,19 +217,31 @@ function ckWinner(){
 // Render
 function renderReel1(){
     slotEl1.src = reel1State
-    reelStop.play();
+    
+    if(sound === true){
+        reelStop.play();
+    }
+
     setTimeout(renderReel2, 1500)
 }
 
 function renderReel2(){
     slotEl2.src = reel2State
-    reelStop.play();
+    
+    if(sound === true){
+        reelStop.play();
+    }
+
     setTimeout(renderReel3, 1500)
 }
 
 function renderReel3(){
     slotEl3.src = reel3State
-    reelStop.play();
+    
+    if(sound === true){
+        reelStop.play();
+    }
+
     setTimeout(renderFinal, 500)
 }
 
@@ -230,7 +249,9 @@ function renderFinal(){
     if(isWinner === 'J') {
         messageEl.innerText = `MEGA JACKPOT WINNER!!! 🤖`
         
-        jackpotSound.play();
+        if(sound === true){
+            jackpotSound.play();
+        }
 
         confetti.start();
 
@@ -242,7 +263,9 @@ function renderFinal(){
     } else if (isWinner === 'W4') {
         messageEl.innerText = `Triple Wily Winner! 💀`
         
-        wilySound.play();
+        if(sound === true){
+            wilySound.play();
+        }
 
         winCredits = 500
         winCrEl.innerText = winCredits
@@ -252,7 +275,9 @@ function renderFinal(){
     } else if (isWinner === 'W3') {
         messageEl.innerText = `Triple Proto Winner!`
         
-        protoSound.play();
+        if(sound === true) {
+            protoSound.play();
+        }
 
         winCredits = 250
         winCrEl.innerText = winCredits
@@ -262,7 +287,9 @@ function renderFinal(){
     } else if (isWinner === 'W2') {
         messageEl.innerText = `You Win! 💯`
         
-        mm1upSound.play();
+        if(sound === true) {
+            mm1upSound.play();
+        }
 
         winCredits = 100
         winCrEl.innerText = winCredits
@@ -272,7 +299,9 @@ function renderFinal(){
     } else if (isWinner === 'W1') {
         messageEl.innerText = `Winner!`
         
-        mm1upSound.play();
+        if(sound === true){
+            mm1upSound.play();
+        }
 
         winCredits = 50
         winCrEl.innerText = winCredits
@@ -288,12 +317,16 @@ function renderFinal(){
         if(remainCredits > 0) {
             messageEl.innerText = `Press SPIN to try again!`
 
-            selectSound.play();
+            if(sound === true){
+                selectSound.play();
+            }
 
         } else {
             messageEl.innerText = `Game Over! Press RESET!`
 
-            gameOverSound.play();
+            if(sound === true){
+                gameOverSound.play();
+            }
         }
     }
 };
@@ -301,48 +334,42 @@ function renderFinal(){
 
 // Sound On-Off
 
-// function soundToggle(){
-//     if (sound === false){
-//         sound = true;
-//         quarterDrop = Audio('../audio/SFX_QuarterDrop.wav');
-//         mm2theme = Audio('../audio/megaMan2_theme_short.mp3');
-//         pullLever = Audio('../audio/slotPullLever.flac');
-//         enemyChosen = Audio('../audio/mm_EnemyChosen.mp3');
-//         reelStop = Audio('../audio/08-openMenu.wav');
-//         jackpotSound = Audio('../audio/mmVictory.mp3');
-//         wilySound = Audio('../audio/mm_DrWilysMap.mp3');
-//         protoSound = Audio('../audio/mm_EnemyChosen.mp3');
-//         mm1upSound = Audio('../audio/02-mm1up.wav');
-//         gameOverSound = Audio('../audio/05-mmDeath.wav');
-//         selectSound = Audio('../audio/09-selectMenu.wav');
-//         soundEl.innerText = '🔈';
-//     } else {
-//         sound = false;
-//         quarterDrop.pause();
-//         mm2theme.pause();
-//         pullLever.pause();
-//         enemyChosen.pause();
-//         reelStop.pause();
-//         jackpotSound.pause();
-//         wilySound.pause();
-//         protoSound.pause();
-//         mm1upSound.pause();
-//         gameOverSound.pause();
-//         selectSound.pause();
-//         quarterDrop = Audio('');
-//         mm2theme = Audio('');
-//         pullLever= Audio('');
-//         enemyChosen = Audio('');
-//         reelStop = Audio('');
-//         jackpotSound = Audio('');
-//         wilySound = Audio('');
-//         protoSound = Audio('');
-//         mm1upSound = Audio('');
-//         gameOverSound = Audio('');
-//         selectSound = Audio('');
-//         soundEl.innerText = '🔇';
-//     }
-// }
+function soundToggle(){
+    if (sound === false){
+        sound = true;
+        soundEl.innerText = soundOn;
+    } else {
+        sound = false;
+        quarterDrop.pause();
+        mm2theme.pause();
+        pullLever.pause();
+        enemyChosen.pause();
+        reelStop.pause();
+        jackpotSound.pause();
+        wilySound.pause();
+        protoSound.pause();
+        mm1upSound.pause();
+        gameOverSound.pause();
+        selectSound.pause();
+        soundEl.innerText = soundOff;
+    }
+}
 
 // INVOKE INIT
 setTimeout(init, 1000);
+
+
+// function toggleAudio() {
+//     if (!sound) {
+//         sound = true;
+//         audio.innerHTML = '<img src="images/audioOn.png">';
+//     }
+//     else {
+//         sound = false;
+//         spin.pause();
+//         win.pause();
+//         lose.pause();
+//         jackpot.pause();
+//         audio.innerHTML = '<img src="images/audioOff.png">';
+//     }
+// }

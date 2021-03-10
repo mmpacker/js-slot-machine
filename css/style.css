@@ -333,7 +333,7 @@ html {
     background-color: #ffd700;
   }
 
-  /* div#sound {
+  div#sound {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 7;
@@ -344,7 +344,7 @@ html {
     align-items: center;
     justify-content: flex-start;
     font-size: 25px;
-  } */
+  }
 
   
   @media only screen and (min-width: 600px){
