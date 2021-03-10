@@ -14,28 +14,21 @@ const imageDefault2 = 'images/mmTitle_resize.gif';
 
 const spinImg = 'images/mmSpin_resize.gif'
 
-    //Audio
-const quarterDrop = new Audio('../audio/SFX_QuarterDrop.wav')
+    //Sounds
+let quarterDrop = new Audio('../audio/SFX_QuarterDrop.wav')
+// let mm2theme = new Audio('../audio/megaMan2_theme_short.mp3')
+let pullLever = new Audio('../audio/slotPullLever.flac')
+let enemyChosen = new Audio('../audio/mm_EnemyChosen.mp3')
+let reelStop = new Audio('../audio/08-openMenu.wav')
+let jackpotSound = new Audio('../audio/mmVictory.mp3');
+let wilySound = new Audio('../audio/mm_DrWilysMap.mp3')
+let protoSound = new Audio('../audio/mm_EnemyChosen.mp3')
+let mm1upSound = new Audio('../audio/02-mm1up.wav')
+let gameOverSound = new Audio('../audio/05-mmDeath.wav')
+let selectSound = new Audio('../audio/09-selectMenu.wav')
 
-const mm2theme = new Audio('../audio/megaMan2_theme_short.mp3')
-
-const pullLever = new Audio('../audio/slotPullLever.flac')
-
-const enemyChosen = new Audio('../audio/mm_EnemyChosen.mp3')
-
-const reelStop = new Audio('../audio/08-openMenu.wav')
-
-const jackpotSound = new Audio('../audio/mmVictory.mp3');
-
-const wilySound = new Audio('../audio/mm_DrWilysMap.mp3')
-
-const protoSound = new Audio('../audio/mm_EnemyChosen.mp3')
-
-const mm1upSound = new Audio('../audio/02-mm1up.wav')
-
-const gameOverSound = new Audio('../audio/05-mmDeath.wav')
-
-const selectSound = new Audio('../audio/09-selectMenu.wav')
+// const soundOn = '🔈'
+// const soundOff = '🔇'
 
 // VARIABLES (state)
 
@@ -52,8 +45,10 @@ let randNum1 = null;
 let randNum2 = null;
 let randNum3 = null;
 
+// let sound = true;
 
 // CACHED ELEMENT REFERENCES
+const reelsEl = document.getElementById('reels');    
 
 const slotEl1 = document.getElementById('el1');
 const slotEl2 = document.getElementById('el2');
@@ -63,6 +58,8 @@ const winCrEl = document.getElementById('crWon')
 const remainCrEl = document.getElementById('crRemain')
 const messageEl = document.getElementById('slotMsg');
 
+// const soundEl = document.getElementById('sound');
+
 
 // EVENT LISTENERS
 
@@ -70,11 +67,15 @@ document.getElementById('spinBtn').addEventListener('click', spin)
 
 document.getElementById('resetBtn').addEventListener('click', init)
 
+// document.getElementById('sound').addEventListener('click', soundToggle)
+
 
 // FUNCTIONS
 
 // Initialize
 function init(){
+    confetti.stop();
+
     reel1State = imageDefault1;
     reel2State = imageDefault2;
     reel3State = imageDefault1;
@@ -94,16 +95,22 @@ function init(){
     randNum3 = null;
 
     quarterDrop.play();
-    setTimeout(function(){
-        mm2theme.play();
-    }, 2000)
+
+    // setTimeout(function(){
+    //     mm2theme.play();
+    // }, 2000)
 }
 
 
 // Click Handler
-function spin(){
+function spin(){ 
+    confetti.stop();
+
     if (remainCredits <= 0) {
-        messageEl.innerText = `Game Over! Press RESET to play again!`
+        messageEl.innerText = `Game Over! Press RESET!`
+
+        gameOverSound.play();
+
     } else {
         remainCredits = (remainCredits - 1);
         winCredits = 0;
@@ -137,7 +144,7 @@ function spin(){
 function spinReel1(){ 
     randNum1 = Math.floor(Math.random() * ((100-1)+1)) + 1;
     if(randNum1 >= 1 && randNum1 <= 50){
-        reel1State = eTankImg
+        reel1State = mmImg
     } else if(randNum1 >= 51 && randNum1 <= 65) {
         reel1State = metImg
     } else if(randNum1 >= 66 && randNum1 <= 80) {
@@ -153,7 +160,7 @@ function spinReel1(){
 function spinReel2(){ 
     randNum2 = Math.floor(Math.random() * ((100-1)+1)) + 1;
     if(randNum2 >= 1 && randNum2 <= 75){
-        reel2State = eTankImg
+        reel2State = mmImg
     } else if(randNum2 >= 76 && randNum2 <= 90) {
         reel2State = metImg
     } else if(randNum2 >= 91 && randNum2 <= 95) {
@@ -168,7 +175,7 @@ function spinReel2(){
 function spinReel3(){ 
     randNum3 = Math.floor(Math.random() * ((100-1)+1)) + 1;
     if(randNum3 >= 1 && randNum3 <= 75){
-        reel3State = eTankImg
+        reel3State = mmImg
     } else if(randNum3 >= 76 && randNum3 <= 90) {
         reel3State = metImg
     } else if(randNum3 >= 91 && randNum3 <= 95) {
@@ -224,6 +231,8 @@ function renderFinal(){
         messageEl.innerText = `MEGA JACKPOT WINNER!!! 🤖`
         
         jackpotSound.play();
+
+        confetti.start();
 
         winCredits = 1000
         winCrEl.innerText = winCredits
@@ -289,5 +298,51 @@ function renderFinal(){
     }
 };
 
+
+// Sound On-Off
+
+// function soundToggle(){
+//     if (sound === false){
+//         sound = true;
+//         quarterDrop = Audio('../audio/SFX_QuarterDrop.wav');
+//         mm2theme = Audio('../audio/megaMan2_theme_short.mp3');
+//         pullLever = Audio('../audio/slotPullLever.flac');
+//         enemyChosen = Audio('../audio/mm_EnemyChosen.mp3');
+//         reelStop = Audio('../audio/08-openMenu.wav');
+//         jackpotSound = Audio('../audio/mmVictory.mp3');
+//         wilySound = Audio('../audio/mm_DrWilysMap.mp3');
+//         protoSound = Audio('../audio/mm_EnemyChosen.mp3');
+//         mm1upSound = Audio('../audio/02-mm1up.wav');
+//         gameOverSound = Audio('../audio/05-mmDeath.wav');
+//         selectSound = Audio('../audio/09-selectMenu.wav');
+//         soundEl.innerText = '🔈';
+//     } else {
+//         sound = false;
+//         quarterDrop.pause();
+//         mm2theme.pause();
+//         pullLever.pause();
+//         enemyChosen.pause();
+//         reelStop.pause();
+//         jackpotSound.pause();
+//         wilySound.pause();
+//         protoSound.pause();
+//         mm1upSound.pause();
+//         gameOverSound.pause();
+//         selectSound.pause();
+//         quarterDrop = Audio('');
+//         mm2theme = Audio('');
+//         pullLever= Audio('');
+//         enemyChosen = Audio('');
+//         reelStop = Audio('');
+//         jackpotSound = Audio('');
+//         wilySound = Audio('');
+//         protoSound = Audio('');
+//         mm1upSound = Audio('');
+//         gameOverSound = Audio('');
+//         selectSound = Audio('');
+//         soundEl.innerText = '🔇';
+//     }
+// }
+
 // INVOKE INIT
-init()
+setTimeout(init, 1000);
