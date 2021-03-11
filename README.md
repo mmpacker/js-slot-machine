@@ -5,11 +5,11 @@
 
 ## About
 
-[Hello, World!](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) My name is Matt Packer. I am an aspiring software engineer and this is my first major web development project. I am completing this project as part of an intense Software Engineering Immersive program that I am a student in through [General Assembly](https://www.generalassemb.ly).
+[Hello, World!](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) My name is Matt Packer. I am an aspiring software engineer, and this is my first major web development project. I am completing this project as part of [General Assembly](https://www.generalassemb.ly)'s intense Software Engineering Immersive program that I am a fellow in.
 
-The assigned task was to create a web based application that is a 'game', in order to help me learn to think more like a programmer. This project gave me an opportunity to be creative and to solve problems while encountering some difficult programming challenges.
+The assigned task was to create a web-based application that is a 'game', in order to help me learn to think more like a programmer. This project gave me an opportunity to be creative and to solve problems while encountering some difficult programming challenges.
 
-I hope you enjoy my 'Mega Man' themed Javascript Slot Machine game!
+I hope you enjoy my 'Mega Man' themed JavaScript Slot Machine game!
 
 ## Getting Started
 
@@ -20,11 +20,11 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 ## Technical Summary
 
 * Technology used in development:
-  * Javascript - ES6
+  * JavaScript - ES6
   * HTML5
   * CSS3
   * Git
-  * Github
+  * GitHub
   * Surge
 
 ## App Requirement Summary
@@ -50,7 +50,7 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
   
   * Body of the machine.
 
-  * Three boes where the 'reels' will display values based on random numbers generated, and predermined odds for each potential value ('Payout' for 3-in-a-row of each element):
+  * Three boxes where the 'reels' will display values based on random numbers generated, and predetermined odds for each potential value ('Payout' for 3-in-a-row of each element):
     * eTank (50 credits)
     * Met (100 credits)
     * Proto Man (250 credits)
@@ -59,11 +59,11 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 
   * Display credits remaining (start with 100 - 1 credit will be used each time the player spins the reels).
 
-  * Display the numer of credits won on a spin (payouts for 3-in-a-row).
+  * Display the number of credits won on a spin (payouts for 3-in-a-row).
 
   * Button to spin the 'reels' and play the game.
 
-  * Reset button to reload the game to the intitial state.
+  * Reset button to reload the game to the initial state.
 
 * HOW TO PLAY:
   * This is a game of chance.
@@ -129,7 +129,7 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
       *  Sets most values in variables to 'null', 0, or empty string.
       *  Disables confetti function if active.
       *  Sets reels to default images.
-      *  Sets default message saying 'Press SPIN to play!'.
+      *  Sets default message saying, 'Press SPIN to play!'.
       *  Sets default credits remaining.
       *  Sets audio to 'on'.
       *  Plays quarter-drop sound.
@@ -139,7 +139,7 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 
    *  Spin:
       *  Disables confetti function if active.
-      *  Checks the number of credit remaining:
+      *  Checks the number of credits remaining:
          *  if < = 0, display game over message
          *  if > 0, continue
       *  Deducts 1 credit from remaining credits.
@@ -157,19 +157,19 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 
    *  Spin Reel 1:
       *  Generates a random number between 1 and 100.
-      *  Assigns the randon number value to the Random Number 1 variable.
+      *  Assigns the random number value to the Random Number 1 variable.
       *  Uses if...else statement to evaluate the random number and assigns the value for the reel 1 state variable.
   
 
    *  Spin Reel 2:  
       *  Generates a random number between 1 and 100.
-      *  Assigns the randon number value to the Random Number 2 variable.
+      *  Assigns the random number value to the Random Number 2 variable.
       *  Uses if...else statement to evaluate the random number and assigns the value for the reel 2 state variable.
 
 
    *  Spin Reel 3:  
       *  Generates a random number between 1 and 100.
-      *  Assigns the randon number value to the Random Number 3 variable.
+      *  Assigns the random number value to the Random Number 3 variable.
       *  Uses if...else statement to evaluate the random number and assigns the value for the reel 3 state variable.
   
 
@@ -181,19 +181,19 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 
    *  Render Reel 1:
       *  Plays reel stop sound.
-      *  Maniputes the DOM to display reel 1 image based on reel 1 state value.
+      *  Manipulates the DOM to display reel 1 image based on reel 1 state value.
       *  Invokes the render reel 2 function with a timed delay using setTimeout.
   
 
    *  Render Reel 2:
       *  Plays reel stop sound.
-      *  Maniputes the DOM to display reel 2 image based on reel 2 state value.
+      *  Manipulates the DOM to display reel 2 image based on reel 2 state value.
       *  Invokes the render reel 3 function with a timed delay using setTimeout.
 
 
    *  Render Reel 3:
       *  Plays reel stop sound.
-      *  Maniputes the DOM to display reel 3 image based on reel 3 state value.
+      *  Manipulates the DOM to display reel 3 image based on reel 3 state value.
       *  Invokes the render final function with a timed delay using setTimeout.
   
 
@@ -228,16 +228,16 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
   
 * Add improved special effects when reels are spinning and when the user wins.
   
-* Optimize the app for accessability.
+* Optimize the app for accessibility.
   
 * Improve the responsive design further to make the app 100% scalable.
 
 ## Special Thanks
 
-* Thank you to the instuctors, support staff, and my peers from the General Assembly Software Engineering Immersive remote cohort for their guidance and collaboration while developing this project.
+* Thank you to the instructors, support staff, and my peers from the General Assembly Software Engineering Immersive remote cohort for their guidance and collaboration while developing this project.
 
 
-* I have always been a huge fan of Mega Man, and many of of the titles that Capcom has produced over the years. Many of the graphic and audio elements used in this student project are property of [Capcom](https://megaman.capcom.com/).
+* I have always been a huge fan of Mega Man, and many of the titles that Capcom has produced over the years. Many of the graphic and audio elements used in this student project are property of [Capcom](https://megaman.capcom.com/).
 
 
 * I formatted this `README.md` file using markdown after completing a helpful online [tutorial](https://www.markdowntutorial.com/).
@@ -255,7 +255,7 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 * Some of the sound effects used in this project were found in a free online database called [Freesound](https://freesound.org/).
 
 
-* To edit the .GIF files used in this project, I utilized an extemely helpful website with a suite of free tools called [OnlineGifTools](https://onlinegiftools.com/)
+* To edit the .GIF files used in this project, I utilized an extremely helpful website with a suite of free tools called [OnlineGifTools](https://onlinegiftools.com/)
 
 
 * The 'confetti' effect that I used in this project was found on the [CSS Script](https://www.cssscript.com/confetti-falling-animation/) site. Thanks to the author, 'mathusummut', for the great app and easy-to-follow implementation instructions.
