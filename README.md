@@ -57,13 +57,13 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
   * Body of the machine.
 
   * Three boxes where the 'reels' will display values based on random numbers generated, and predetermined odds for each potential value ('Payout' for 3-in-a-row of each element):
-    * eTank (50 credits)
+    * eTank (50 credits) - most common
     * Met (100 credits)
     * Proto Man (250 credits)
     * Dr. Wily (500 credits)
-    * Mega Man (Jackpot - 1000 credits)
+    * Mega Man (Jackpot - 1000 credits) - least common
 
-  * Display credits remaining (start with 100 - 1 credit will be used each time the player spins the reels).
+  * Display credits remaining (start with 10 - 1 credit will be used each time the player spins the reels).
 
   * Display the number of credits won on a spin (payouts for 3-in-a-row).
 
@@ -73,8 +73,11 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 
 * HOW TO PLAY:
   * This is a game of chance.
+  * When the 'SPIN' button is pressed the reels 'spin' and three images appear randomly in the 'reel' boxes.
+  * The objective is to get three matching images, and to avoid running out of credits.
   * To play, press the 'SPIN' button.
-  * If 0 credits remain, use the 'RESET' button to reset the game.
+  * 1 credit will be deducted for each spin.
+  * If 0 credits remain, use the 'RESET' button to reset the game to the original state and try again.
 
 
 ## Pseudocode

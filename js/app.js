@@ -337,7 +337,7 @@ function renderFinal(){
 };
 
 
-// Sound On-Off
+// Sound Effects On-Off
 function soundToggle(){
     if (sound === false){
         sound = true;
