@@ -168,7 +168,7 @@ function spinReel1(){
 function spinReel2(){ 
     randNum2 = Math.floor(Math.random() * ((100-1)+1)) + 1;
     if(randNum2 >= 1 && randNum2 <= 75){
-        reel2State = mmImg
+        reel2State = eTankImg
     } else if(randNum2 >= 76 && randNum2 <= 90) {
         reel2State = metImg
     } else if(randNum2 >= 91 && randNum2 <= 95) {
@@ -354,6 +354,7 @@ function soundToggle(){
         soundEl.innerText = soundOff;
     }
 }
+
 
 // INVOKE INIT
 init();

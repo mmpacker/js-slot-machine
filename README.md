@@ -12,9 +12,10 @@ The assigned task was to create a web based application that is a 'game', in ord
 I hope you enjoy my 'Mega Man' themed Javascript Slot Machine game!
 
 ## Getting Started
+
 My game was deployed using Surge, and can be found here: https://mp-js-slot-machine-project.surge.sh/
 
------- SCREENSHOTS
+![JS Slot Machine Screen Shots](images/mmSlots_Screenshots.png)
 
 ## Technical Summary
 
@@ -74,6 +75,7 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 
 ![JS Slot Machine Wireframe](images/JS-Slot-Machine-Wireframe_v2.png)
 
+* The game has been made responsive so that renders at a smaller or larger size depending on the screen size.
 
 ## Pseudocode
 
@@ -101,7 +103,7 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
   * Random Number 1
   * Random Number 2
   * Random Number 3
-  * ------ Audio Status
+  * Sound Status
 
 
 * Cached Element References:
@@ -111,13 +113,13 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
   * Credits Won
   * Credits Remaining
   * Slot Message
-  * ------ Audio Image
+  * Sound Image
 
 
 * Event Listeners:
   * Click 'Spin' Button
   * Click 'Reset' Button
-  * ------ Click 'Audio' Button
+  * Click 'Sound' Button
 
 
 *  Functions:
@@ -129,7 +131,8 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
       *  Sets reels to default images.
       *  Sets default message saying 'Press SPIN to play!'.
       *  Sets default credits remaining.
-      *  ------ Sets audio to 'off'.
+      *  Sets audio to 'on'.
+      *  Plays quarter-drop sound.
       *  Is invoked on page load/refresh.
       *  Is invoked when 'reset' button is clicked.
   
@@ -144,7 +147,8 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
       *  Resets win state variable to an empty string value.
       *  Sets message to 'Reels Spinning...'
       *  Sets reel image values to the 'spin' animation image.
-      *  ------ Plays spin sound.
+      *  Plays lever sound.
+      *  Plays spin sound.
       *  Invokes function to 'spin' reel 1.
       *  Invokes function to 'spin' reel 2.
       *  Invokes function to 'spin' reel 3.
@@ -176,19 +180,19 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
   
 
    *  Render Reel 1:
-      *  ------ Plays slot stop sound.
+      *  Plays reel stop sound.
       *  Maniputes the DOM to display reel 1 image based on reel 1 state value.
       *  Invokes the render reel 2 function with a timed delay using setTimeout.
   
 
    *  Render Reel 2:
-      *  ------ Plays slot stop sound.
+      *  Plays reel stop sound.
       *  Maniputes the DOM to display reel 2 image based on reel 2 state value.
       *  Invokes the render reel 3 function with a timed delay using setTimeout.
 
 
    *  Render Reel 3:
-      *  ------ Plays slot stop sound.
+      *  Plays reel stop sound.
       *  Maniputes the DOM to display reel 3 image based on reel 3 state value.
       *  Invokes the render final function with a timed delay using setTimeout.
   
@@ -208,13 +212,25 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
                   *  Manipulates the DOM to change the slot message to display 'spin again' message.
                *  If there are NO credits remaining:
                   *  Manipulates the DOM to change the slot message to display 'game over' message.
-                  *  ------ Plays 'game over' sound effect.
+                  * Plays 'game over' sound effect.
+  
+    * Sound Toggle
+      * Adds functionality to turn sound effects ON or OFF by clicking the 🔈 button.
 
 
 *  Invoke the init function so that the game loads to the initial state when the page loads.
 
 ## Future Enhancements
------- Add possible future enhancements to this app.
+
+* Add feature that allows the user to wager more than one credit on a spin and pay out more for a win based on the increased risk.
+  
+* Add improvements to the game styling.
+  
+* Add improved special effects when reels are spinning and when the user wins.
+  
+* Optimize the app for accessability.
+  
+* Improve the responsive design further to make the app 100% scalable.
 
 ## Special Thanks
 
