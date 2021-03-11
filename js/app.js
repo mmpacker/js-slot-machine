@@ -119,7 +119,10 @@ function spin(){
 
     } else {
         remainCredits = (remainCredits - 1);
+        remainCrEl.innerText = remainCredits
+
         winCredits = 0;
+        winCrEl.innerText = winCredits
         
         isWinner = '';
         
