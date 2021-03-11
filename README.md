@@ -3,6 +3,7 @@
 
 ![JS Slot Machine Wireframe](images/JS-Slot-Machine-Wireframe_v2.png)
 
+
 ## About
 
 [Hello, World!](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) My name is Matt Packer. I am an aspiring software engineer, and this is my first major web development project. I am completing this project as part of [General Assembly](https://www.generalassemb.ly)'s intense Software Engineering Immersive program that I am a fellow in.
@@ -11,11 +12,15 @@ The assigned task was to create a web-based application that is a 'game', in ord
 
 I hope you enjoy my 'Mega Man' themed JavaScript Slot Machine game!
 
+
 ## Getting Started
 
 My game was deployed using Surge, and can be found here: https://mp-js-slot-machine-project.surge.sh/
 
 ![JS Slot Machine Screen Shots](images/mmSlots_Screenshots.png)
+
+* The game was created using a 'moblie-first' design and is responsive so that renders at a smaller or larger size depending on the screen size.
+
 
 ## Technical Summary
 
@@ -46,6 +51,7 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 
 
 ## Game Summary
+
 * Display a slot machine layout when the webpage loads. This includes:
   
   * Body of the machine.
@@ -70,12 +76,6 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
   * To play, press the 'SPIN' button.
   * If 0 credits remain, use the 'RESET' button to reset the game.
 
-
-## Wireframes
-
-![JS Slot Machine Wireframe](images/JS-Slot-Machine-Wireframe_v2.png)
-
-* The game has been made responsive so that renders at a smaller or larger size depending on the screen size.
 
 ## Pseudocode
 
@@ -220,6 +220,7 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 
 *  Invoke the init function so that the game loads to the initial state when the page loads.
 
+
 ## Future Enhancements
 
 * Add feature that allows the user to wager more than one credit on a spin and pay out more for a win based on the increased risk.
@@ -231,6 +232,7 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 * Optimize the app for accessibility.
   
 * Improve the responsive design further to make the app 100% scalable.
+
 
 ## Special Thanks
 
