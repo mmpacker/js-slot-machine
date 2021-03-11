@@ -118,7 +118,7 @@ html {
 
   div#reel1 > img {
     max-width: 100%;
-    height: auto;
+    max-height: 70px;
   }
 
   div#reel2 {
@@ -149,7 +149,7 @@ html {
 
   div#reel2 > img {
     max-width: 100%;
-    height: auto;
+    max-height: 70px;
   }
 
   div#reel3 {
@@ -180,7 +180,7 @@ html {
 
   div#reel3 > img {
     max-width: 100%;
-    height: auto;
+    max-height: 70px;
   }
 
   section#bottom {
@@ -343,7 +343,7 @@ html {
     display:flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 25px;
+    font-size: 18px;
   }
 
   
@@ -364,6 +364,18 @@ html {
   
     div#slotMsg {
       font-size: 40px;
+    }
+  
+    div#reel1 > img {
+      max-height: 100%;
+    }
+  
+    div#reel2 > img {
+      max-height: 100%;
+    }
+  
+    div#reel3 > img {
+      max-height: 100%;
     }
   
     div#text1 {
@@ -405,5 +417,9 @@ html {
   
     div#resetBtn:hover {
       background-color: #ffd700;
+    }
+
+    div#sound {
+      font-size: 25px;
     }
   }

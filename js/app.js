@@ -3,20 +3,20 @@
 // CONSTANTS
 
     //Images
-const eTankImg = 'images/eTankGif_resize.gif';  //E-Tank - 50
-const metImg = 'images/metGif2_resize.gif'; // Met - 100
-const protoImg = 'images/protoManGif_resize.gif'; // Proto Man - 250
-const wilyImg = 'images/wilyGif_resize.gif'; // Dr. Wily - 500
-const mmImg = 'images/mmGif2_speed.gif'; // Mega Man - 1000 (Jackpot)
+const eTankImg = 'images/eTankGif_resize.gif';
+const metImg = 'images/metGif2_resize.gif';
+const protoImg = 'images/protoManGif_resize.gif';
+const wilyImg = 'images/wilyGif_resize.gif';
+const mmImg = 'images/mmGif2_resize2.gif';
 
 const imageDefault1 = 'images/mm1Up_resize.gif';
 const imageDefault2 = 'images/mmTitle_resize.gif';
 
 const spinImg = 'images/mmSpin_resize.gif'
 
+
     //Sounds
 let quarterDrop = new Audio('../audio/SFX_QuarterDrop.wav')
-let mm2theme = new Audio('../audio/megaMan2_theme_short.mp3')
 let pullLever = new Audio('../audio/slotPullLever.flac')
 let enemyChosen = new Audio('../audio/mm_EnemyChosen.mp3')
 let reelStop = new Audio('../audio/08-openMenu.wav')
@@ -30,8 +30,8 @@ let selectSound = new Audio('../audio/09-selectMenu.wav')
 const soundOn = '🔈'
 const soundOff = '🔇'
 
-// VARIABLES (state)
 
+// VARIABLES (state)
 let reel1State = '';
 let reel2State = '';
 let reel3State = '';
@@ -47,6 +47,7 @@ let randNum3 = null;
 
 let sound = '';
 
+
 // CACHED ELEMENT REFERENCES
 const reelsEl = document.getElementById('reels');    
 
@@ -58,13 +59,13 @@ const winCrEl = document.getElementById('crWon');
 const remainCrEl = document.getElementById('crRemain');
 const messageEl = document.getElementById('slotMsg');
 
-let soundEl = document.getElementById('sound');
+const soundEl = document.getElementById('sound');
 
 const spinBtn = document.getElementById('spinBtn');
 const resetBtn = document.getElementById('resetBtn');
 
-// EVENT LISTENERS
 
+// EVENT LISTENERS
 spinBtn.addEventListener('click', spin)
 
 resetBtn.addEventListener('click', init)
@@ -151,7 +152,7 @@ function spin(){
 function spinReel1(){ 
     randNum1 = Math.floor(Math.random() * ((100-1)+1)) + 1;
     if(randNum1 >= 1 && randNum1 <= 50){
-        reel1State = mmImg
+        reel1State = eTankImg
     } else if(randNum1 >= 51 && randNum1 <= 65) {
         reel1State = metImg
     } else if(randNum1 >= 66 && randNum1 <= 80) {
@@ -179,10 +180,11 @@ function spinReel2(){
     }
 }
 
+
 function spinReel3(){ 
     randNum3 = Math.floor(Math.random() * ((100-1)+1)) + 1;
     if(randNum3 >= 1 && randNum3 <= 75){
-        reel3State = mmImg
+        reel3State = eTankImg
     } else if(randNum3 >= 76 && randNum3 <= 90) {
         reel3State = metImg
     } else if(randNum3 >= 91 && randNum3 <= 95) {
@@ -333,7 +335,6 @@ function renderFinal(){
 
 
 // Sound On-Off
-
 function soundToggle(){
     if (sound === false){
         sound = true;
@@ -341,7 +342,6 @@ function soundToggle(){
     } else {
         sound = false;
         quarterDrop.pause();
-        mm2theme.pause();
         pullLever.pause();
         enemyChosen.pause();
         reelStop.pause();
@@ -356,20 +356,4 @@ function soundToggle(){
 }
 
 // INVOKE INIT
-setTimeout(init, 1000);
-
-
-// function toggleAudio() {
-//     if (!sound) {
-//         sound = true;
-//         audio.innerHTML = '<img src="images/audioOn.png">';
-//     }
-//     else {
-//         sound = false;
-//         spin.pause();
-//         win.pause();
-//         lose.pause();
-//         jackpot.pause();
-//         audio.innerHTML = '<img src="images/audioOff.png">';
-//     }
-// }
+init();
