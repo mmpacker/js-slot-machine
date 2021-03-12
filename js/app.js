@@ -1,4 +1,4 @@
-// JS Slot Machine by Matt Packer
+// JavaScript Slot Machine by Matt Packer
 
 // CONSTANTS
 

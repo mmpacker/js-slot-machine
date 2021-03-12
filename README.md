@@ -1,4 +1,4 @@
-# JS Slot Machine
+# JavaScript Slot Machine Project
 ### by Matt Packer
 
 ![JS Slot Machine Wireframe](images/JS-Slot-Machine-Wireframe_v2.png)
