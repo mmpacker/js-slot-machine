@@ -16,16 +16,16 @@ const spinImg = 'images/mmSpin_resize.gif'
 
 
     //Sounds
-let quarterDrop = new Audio('../audio/SFX_QuarterDrop.wav')
-let pullLever = new Audio('../audio/slotPullLever.flac')
-let enemyChosen = new Audio('../audio/mm_EnemyChosen.mp3')
-let reelStop = new Audio('../audio/08-openMenu.wav')
-let jackpotSound = new Audio('../audio/mmVictory.mp3');
-let wilySound = new Audio('../audio/mm_DrWilysMap.mp3')
-let protoSound = new Audio('../audio/mm_EnemyChosen.mp3')
-let mm1upSound = new Audio('../audio/02-mm1up.wav')
-let gameOverSound = new Audio('../audio/05-mmDeath.wav')
-let selectSound = new Audio('../audio/09-selectMenu.wav')
+const quarterDrop = new Audio('../audio/SFX_QuarterDrop.wav')
+const pullLever = new Audio('../audio/slotPullLever.flac')
+const enemyChosen = new Audio('../audio/mm_EnemyChosen.mp3')
+const reelStop = new Audio('../audio/08-openMenu.wav')
+const jackpotSound = new Audio('../audio/mmVictory.mp3');
+const wilySound = new Audio('../audio/mm_DrWilysMap.mp3')
+const protoSound = new Audio('../audio/mm_EnemyChosen.mp3')
+const mm1upSound = new Audio('../audio/02-mm1up.wav')
+const gameOverSound = new Audio('../audio/05-mmDeath.wav')
+const selectSound = new Audio('../audio/09-selectMenu.wav')
 
 const soundOn = '🔈'
 const soundOff = '🔇'
