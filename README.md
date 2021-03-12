@@ -245,6 +245,9 @@ My game was deployed using Surge, and can be found here: https://mp-js-slot-mach
 * I have always been a huge fan of Mega Man, and many of the titles that Capcom has produced over the years. Many of the graphic and audio elements used in this student project are property of [Capcom](https://megaman.capcom.com/).
 
 
+* This entire app was coded using [Visual Studio Code](https://code.visualstudio.com/) (VSCode).
+
+
 * I formatted this `README.md` file using markdown after completing a helpful online [tutorial](https://www.markdowntutorial.com/).
 
 
